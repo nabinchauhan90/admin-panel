@@ -16,12 +16,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: "User Management",
     icon: "person-outline",
-    home: true,
     children: [
       {
         title: "Users",
         link: "/pages/user-manage/users",
-        
+        home: true,
       },
     ],
   },
