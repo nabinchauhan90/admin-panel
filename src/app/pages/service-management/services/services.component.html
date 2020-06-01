@@ -1,0 +1,15 @@
+    <div class="card-col" *ngFor="let service of services">
+      <nb-card size="medium">
+        <nb-card-header>{{ service.service_name }}</nb-card-header>
+        <nb-card-body>
+          <img
+            class="img-responsive"
+            src="{{ service.service_image}}"
+            alt="{{service.service_name}}"
+            style="width: 250px;"
+          />
+          <h4>{{ service.service_desc}}</h4>
+          <p>Email:{{ service.service_email }}</p>
+        </nb-card-body>
+      </nb-card>
+  </div>
