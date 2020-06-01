@@ -31,12 +31,14 @@ export class UsersTableService extends UsersTableData {
         })
       );
   }
+  
   deleteUserbyId(id:string){
     return this.http.delete('https://weedon-f87f4.firebaseio.com/Users/'+id+'.json');
   }
-    // }
-  // addUser(){
-  //   this.http.post('https://weedon-f87f4.firebaseio.com/Users.json',userData)
-  // }
-  
+  addUser(id:userData){
+     return this.http.post('https://weedon-f87f4.firebaseio.com/Users.json',id);
+  }
+  editUserbyId(id:string,data:userData){
+    return this.http.put('https://weedon-f87f4.firebaseio.com/Users/'+id+'.json',data);
+  } 
 }
