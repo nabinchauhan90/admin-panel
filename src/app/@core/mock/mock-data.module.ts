@@ -4,12 +4,13 @@ import {UserService} from './users.service';
 import { UsersTableService } from './users-table.service';
 import {ServicesService} from './services.service'
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { ArchivesService } from './archives.service'
 
 const SERVICES = [
   UsersTableService,
   ServicesService,
   UserService,
+  ArchivesService,
   HttpClient
 ];
 

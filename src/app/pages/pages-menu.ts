@@ -1,6 +1,7 @@
 import { NbMenuItem } from "@nebular/theme";
 import { Title } from "@angular/platform-browser";
 import { PostsComponent } from "./post-management/posts/posts.component";
+import { icon } from "leaflet";
 
 export const MENU_ITEMS: NbMenuItem[] = [
   // {
@@ -35,6 +36,16 @@ export const MENU_ITEMS: NbMenuItem[] = [
       {
         title: "New Service",
         link: "/pages/service-manage/new-service",
+      },
+    ],
+  },
+  {
+    title: "Message Archives",
+    icon: "message-square-outline",
+    children: [
+      {
+        title: "Archives",
+        link: "/pages/message-archives/archives",
       },
     ],
   },

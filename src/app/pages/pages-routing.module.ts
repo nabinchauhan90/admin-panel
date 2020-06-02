@@ -24,6 +24,12 @@ const routes: Routes = [
           ),
       },
       {
+        path:"message-archives",
+        loadChildren:()=>import("./message-archives/message-archives.module").then(
+          (m)=>m.MessageArchivesModule
+        )
+      },
+      {
         path: "post-manage",
         loadChildren: () =>
           import("./post-management/post-management.module").then(

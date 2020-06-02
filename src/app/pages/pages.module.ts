@@ -7,6 +7,7 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 import { UserManangementComponent } from './user-management/user-management.component';
 import { ServiceManagementComponent } from './service-management/service-management.component';
+import { MessageArchivesComponent } from './message-archives/message-archives.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { ServiceManagementComponent } from './service-management/service-managem
     PagesComponent,
     UserManangementComponent,
     ServiceManagementComponent,
+    MessageArchivesComponent,
   ],
 })
 export class PagesModule {

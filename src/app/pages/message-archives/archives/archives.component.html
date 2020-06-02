@@ -1,0 +1,32 @@
+<nb-accordion>
+    <nb-accordion-item *ngFor="let apps of apple">
+      <nb-accordion-item-header >
+        Productscard{{apps.service_name}}
+      </nb-accordion-item-header>
+      <nb-accordion-item-body>
+        <nb-accordion>
+          <nb-accordion-item>
+            <nb-accordion-item-header>
+              THis is Just A Test Header:{{apps.service_name}}
+            </nb-accordion-item-header>
+            <nb-accordion-item-body>
+                <h4>Message: Just A Test Message{{apps.message}} </h4>
+                <h3>Data: 12399124{{apps.time}}</h3>
+                <h5>Sent By:Anonymous user</h5>
+                <span>Status:See/Unseen {{apps.seen}}</span>
+            </nb-accordion-item-body>
+          </nb-accordion-item>
+        </nb-accordion>
+      </nb-accordion-item-body>
+    </nb-accordion-item>    
+  <nb-accordion-item>
+    <nb-accordion-item-header>
+      Edit
+    </nb-accordion-item-header>
+    <nb-accordion-item-body>
+      A nebula is an interstellar cloud of dust, hydrogen, helium and other
+      ionized gases. Originally, nebula was a name for any diffuse astronomical
+      object, including galaxies beyond the Milky Way.
+    </nb-accordion-item-body>
+  </nb-accordion-item>
+</nb-accordion>
