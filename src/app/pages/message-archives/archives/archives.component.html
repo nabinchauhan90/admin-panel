@@ -1,4 +1,4 @@
- <nb-accordion>
+ <!-- <nb-accordion>
     <nb-accordion-item *ngFor="let apps of apple; index as i">
       <nb-accordion-item-header >
         {{apps.service_name}}+{{i}}
@@ -32,6 +32,44 @@
     </nb-accordion-item-body>
   </nb-accordion-item>
 </nb-accordion> 
+ -->
+ <nb-accordion>
+  <nb-accordion-item *ngFor="let apps of MessageArray; index as i">
+    <nb-accordion-item-header >
+      {{apps.id}}+{{i}}
+    </nb-accordion-item-header>
+    <nb-accordion-item-body>
+      <nb-accordion>
+        <nb-accordion-item *ngFor="let capps of apps.subpart; index as i">
+          <nb-accordion-item-header>
+            THis is Just A Test Header:{{capps.service_name}}+{{i}}
+          </nb-accordion-item-header>
+          <nb-accordion-item-body>
+            <button class="btn btn-primary" (click)="onClick()">Click</button>
+              <h4>Message: Just A Test Message{{capps.message}} </h4>
+              <h3>Data: 12399124{{capps.time}}</h3>
+              <h5>Sent By:Anonymous user</h5>
+              <span>Status:See/Unseen {{capps.seen}}</span>
+          </nb-accordion-item-body>
+        </nb-accordion-item>
+      </nb-accordion>
+    </nb-accordion-item-body>
+  </nb-accordion-item>    
+<nb-accordion-item>
+  <nb-accordion-item-header>
+    Edit
+  </nb-accordion-item-header>
+  <nb-accordion-item-body>
+    <button class="btn btn-primary"(click)="checkStatus()">Click Me!!!</button>
+    A nebula is an interstellar cloud of dust, hydrogen, helium and other
+    ionized gases. Originally, nebula was a name for any diffuse astronomical
+    object, including galaxies beyond the Milky Way.
+  </nb-accordion-item-body>
+</nb-accordion-item>
+</nb-accordion> 
+
+
+
 <!-- <nb-accordion>
   <nb-accordion-item *ngFor="let apps of serviceData; let i=index">
     <nb-accordion-item-header >

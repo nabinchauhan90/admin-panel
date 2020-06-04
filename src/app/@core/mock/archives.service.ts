@@ -11,7 +11,7 @@ export class ArchivesService {
   data:Archive[]=[];  
   getData(){
     return this.data;   
-  }
+  } 
   // getMessages(){
   //  return this.http.get('https://weedon-f87f4.firebaseio.com/chat_1.json').pipe(map(recivedData=>{
   //   let arrayT=[]; 
@@ -24,7 +24,7 @@ export class ArchivesService {
     return this.http.get('https://weedon-f87f4.firebaseio.com/chat_1.json').pipe(map(
       recivedData=>{
         let arrayT=[];
-        let arrayT3:Archive[]=[]; 
+        let arrayT3=[]; 
         console.log(recivedData);
         for (const key in recivedData) {
           if (recivedData.hasOwnProperty(key)) {
@@ -35,12 +35,14 @@ export class ArchivesService {
         for (let index = 0; index < arrayT.length; index++) {
           for (const key in arrayT[index]) {
             if (arrayT[index].hasOwnProperty(key)) {
-              arrayT3.push({...arrayT[index][key],id:key})
+              arrayT3.push({...arrayT[index][key],id:arrayT[index].id})
             }
           }
         }
         console.log(arrayT); 
         console.log(arrayT3);
+        const arrayT4=[].concat.apply([],arrayT3);
+        console.log(arrayT4);
         return arrayT3;
       }
     ))
