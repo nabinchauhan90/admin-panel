@@ -18,6 +18,7 @@ import { group } from "@angular/animations";
 })
 export class ArchivesComponent implements OnInit {
   constructor(private service: ArchivesData, private service2: ServicesData) {
+    this.getServices();
     this.getMessage();
     console.log(this.MessageArray);
   }
@@ -30,19 +31,21 @@ export class ArchivesComponent implements OnInit {
   //  serviceData2:ArchiveCollection[]=[];
   //  apple2:Archive[];
 
-  // getServices(){
-  //   this.service2.getData().subscribe(recivedData=>{
-  //     this.serviceName=recivedData;
-  //     console.log(recivedData);
-  //   })
-  // }
+   getServices(){
+     this.service2.getData().subscribe(recivedData=>{
+       this.serviceName=recivedData;
+       console.log(recivedData);
+     })
+   }
   getMessage() {
     this.service.getMessages().subscribe((recivedData) => {
-      this.MessageArray = recivedData;
+      // for (let i = 0; i < recivedData.length; i++) {
+      //   // this.MessageArray = recivedData[i];
+      // }
+      this.MessageArray=recivedData;
         console.log(this.MessageArray);
       });
   }
-
   checkStatus() {
     this.getMessage();
     // this.getServices();

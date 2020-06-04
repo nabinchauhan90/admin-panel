@@ -34,22 +34,23 @@
 </nb-accordion> 
  -->
  <nb-accordion>
-  <nb-accordion-item *ngFor="let apps of MessageArray; index as i">
+   <h3>Messages By Services</h3>
+   <br>
+  <nb-accordion-item *ngFor="let apps of serviceName; index as i">
     <nb-accordion-item-header >
-      {{apps.id}}+{{i}}
+      {{apps.service_name}}
     </nb-accordion-item-header>
     <nb-accordion-item-body>
       <nb-accordion>
-        <nb-accordion-item *ngFor="let capps of apps.subpart; index as i">
+        <nb-accordion-item *ngFor="let apps2 of MessageArray; index as j">
           <nb-accordion-item-header>
-            THis is Just A Test Header:{{capps.service_name}}+{{i}}
+            {{apps.service_name}} Message {{j+1}}
           </nb-accordion-item-header>
           <nb-accordion-item-body>
-            <button class="btn btn-primary" (click)="onClick()">Click</button>
-              <h4>Message: Just A Test Message{{capps.message}} </h4>
-              <h3>Data: 12399124{{capps.time}}</h3>
-              <h5>Sent By:Anonymous user</h5>
-              <span>Status:See/Unseen {{capps.seen}}</span>
+            <!-- <button class="btn btn-primary" (click)="onClick()">Click</button> -->
+              <p>Message: <br>  {{apps2.message}} <p>
+              <p>Date: <b>{{apps2.time}}</b> </p>
+               <p>Sent By:{{apps2.from}}</p>
           </nb-accordion-item-body>
         </nb-accordion-item>
       </nb-accordion>

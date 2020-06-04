@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Archive } from '../data/archives';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators'
 import { RecurseVisitor } from '@angular/compiler/src/i18n/i18n_ast';
 import { ArrayType } from '@angular/compiler';
+import { group } from '@angular/animations';
+import { from, of, zip, concat } from 'rxjs';
+import {map, groupBy, mergeMap, toArray } from 'rxjs/operators';
+
 
 @Injectable()
 export class ArchivesService {
@@ -28,21 +31,30 @@ export class ArchivesService {
         console.log(recivedData);
         for (const key in recivedData) {
           if (recivedData.hasOwnProperty(key)) {
-            arrayT.push({...recivedData[key]});
+            arrayT.push({...recivedData[key],id:key});
           }
         }   
         console.log(arrayT);
-        for (let index = 0; index < arrayT.length; index++) {
+        for (let index = 0; index <1; index++) {
           for (const key in arrayT[index]) {
-            if (arrayT[index].hasOwnProperty(key)) {
+            if (arrayT[index].hasOwnProperty(key)
+            ) {
               arrayT3.push({...arrayT[index][key],id:arrayT[index].id})
             }
           }
         }
-        console.log(arrayT); 
         console.log(arrayT3);
-        const arrayT4=[].concat.apply([],arrayT3);
-        console.log(arrayT4);
+        // from(arrayT3).pipe(
+        //   groupBy(
+        //     message=>message.from
+        //   ),
+        //   mergeMap(group=>zip(of(group.key),group.pipe(toArray())))
+        // ).subscribe(recived=>{
+        //   console.log(recived);
+        // })
+        //const arrayT4=[].concat.apply([],arrayT3);
+        // const arrayT4 = [].concat(...arrayT3);
+        // console.log(arrayT4);
         return arrayT3;
       }
     ))
